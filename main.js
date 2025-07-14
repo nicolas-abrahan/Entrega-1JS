@@ -22,7 +22,7 @@ function iniciarCalculadora() {
     (costoDesgaste + costoEnergia + costoPlastico + insu) *
     gastosFijos.margenVenta;
 
-  alert("tu precio de venta es: ", precioVenta);
+  alert("tu precio de venta es: " + precioVenta);
 }
 
 function margenGanancia() {
