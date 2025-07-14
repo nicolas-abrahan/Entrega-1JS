@@ -22,7 +22,7 @@ function iniciarCalculadora() {
     (costoDesgaste + costoEnergia + costoPlastico + insu) *
     gastosFijos.margenVenta;
 
-  alert("tu precio de venta es: " + precioVenta);
+  alert(`tu precio de venta es: ` + precioVenta);
 }
 
 function margenGanancia() {
@@ -49,7 +49,7 @@ function insumos() {
         1. No`);
 
   if (consultaInsumo == 0) {
-    gastosFijos.insu = parseFloat(prompt("Ingrese monto de los insumos"));
+    gastosFijos.insu = parseFloat(prompt(`Ingrese monto de los insumos`));
   }
 }
 
