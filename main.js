@@ -1,11 +1,11 @@
 alert(`Hola, vamos a calcular tu precio de venta`);
 
-const gastosFijos = [
-  (precioKWh = 200),
-  (desgasteMaquina = 5000), // horas.
-  (margenVenta = 0),
-  (insu = 0),
-];
+const gastosFijos = {
+  precioKWh: 200,
+  desgasteMaquina: 5000, // horas.
+  margenVenta: 0,
+  insu: 0,
+};
 
 function iniciarCalculadora() {
   let tiempo = parseFloat(prompt(`Ingrese tiempo de impresion en minutos`));
@@ -19,10 +19,10 @@ function iniciarCalculadora() {
   let costoDesgaste = (gastosFijos.desgasteMaquina * tiempo) / 60;
   let costoPlastico = (peso * precioFilamento) / 1000;
   let precioVenta =
-    (costoDesgaste + costoEnergia + costoPlastico + insu) *
+    (costoDesgaste + costoEnergia + costoPlastico + gastosFijos.insu) *
     gastosFijos.margenVenta;
 
-  alert(`tu precio de venta es: ` + precioVenta);
+  alert("tu precio de venta es: " + precioVenta);
 }
 
 function margenGanancia() {
@@ -50,6 +50,8 @@ function insumos() {
 
   if (consultaInsumo == 0) {
     gastosFijos.insu = parseFloat(prompt(`Ingrese monto de los insumos`));
+  } else {
+    gastosFijos.insu = 0;
   }
 }
 
